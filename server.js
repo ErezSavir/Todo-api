@@ -14,6 +14,8 @@ app.get('/', function(req, res) {
 	res.send('Todo API Root');
 });
 
+
+
 // GET /todos?completed=true&q=house
 app.get('/todos', function(req, res) {
 	var queryParams = req.query;
@@ -45,7 +47,6 @@ app.get('/todos/:id', function(req, res) {
 	var matchedTodo = _.findWhere(todos, {
 		id: todoID
 	});
-
 	if (matchedTodo) {
 		res.json(matchedTodo);
 	} else {
